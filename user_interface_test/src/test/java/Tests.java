@@ -1,5 +1,3 @@
-package first_test;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class Tests {
     @Test
     public void WrongDestination() {
-        System.setProperty("webdriver.chrome.driver", "C://Users/User/Desktop/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "../../main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 10);
