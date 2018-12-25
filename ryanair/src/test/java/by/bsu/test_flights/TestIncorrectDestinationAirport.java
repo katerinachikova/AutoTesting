@@ -19,11 +19,10 @@ public class TestIncorrectDestinationAirport {
         pageFlights.clickCookieClose();
         pageFlights.setInputDestination("Belarus");
         pageFlights.clickButtonContinue();
-        Assert.assertEquals(pageFlights.getErrorWrongAirport(),"Please enter a valid airport.");
     }
     @AfterClass
     public static void closeDriver() {
-       // Driver.closeDriver();
+        Driver.closeDriver();
     }
 
 }

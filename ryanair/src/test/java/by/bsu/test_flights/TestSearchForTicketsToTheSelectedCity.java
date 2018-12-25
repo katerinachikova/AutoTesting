@@ -18,15 +18,14 @@ public class TestSearchForTicketsToTheSelectedCity {
     public void searchForTicketsToTheSelectedCityTest() {
         pageFlights.clickCookieClose();
         pageFlights.setInputDestination("Budapest");
-        pageFlights.setDateFlyOut(0);
-        pageFlights.setDateFlyBack(2);
+        pageFlights.setDateFlyOut(2);
+        pageFlights.setDateFlyBack(4);
         pageFlights.clickButtonLetsGo();
-        pageFlights.clickButtonOkInfo();
         Assert.assertEquals(pageFlights.getRealRoute(), "Dublin to Budapest");
     }
     @AfterClass
     public static void closeDriver() {
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
 }

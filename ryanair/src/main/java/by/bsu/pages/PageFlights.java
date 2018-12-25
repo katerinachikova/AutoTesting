@@ -69,7 +69,7 @@ public class PageFlights extends MainPage {
     @FindBy(css = ".col-swap-airports")
     private WebElement buttonSwapAirports;
 
-    @FindBy(css = ".ryanair-error-tooltip>span")
+    @FindBy(css = ".ryanair-error-tooltip")
     private WebElement errorWrongAirport;
 
     public void clickCookieClose() {
@@ -81,11 +81,6 @@ public class PageFlights extends MainPage {
     }
     public void clickArrow() {
         buttonShowPasList.click();
-    }
-    public void clickButtonOkInfo()
-    {
-        new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@translate='foh.home.flight_search_errors.confirm']"))).click();
     }
     public String getError() {
         return error.getText();
@@ -117,10 +112,6 @@ public class PageFlights extends MainPage {
                 flyBackMonth.getAttribute("aria-required").equals("false") &&
                 flyBackYear.getAttribute("aria-required").equals("false");
     }
-    public void scrollPage(){
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("scroll(0, 250);");
-    }
     public String getTextFromFlyingWithAnInfant(){
         return textFromFlyingWithAnInfant.getText();
     }
@@ -131,7 +122,9 @@ public class PageFlights extends MainPage {
         buttonContinue.click();
     }
     public String getRealRoute() {
-        return realRoute.getText();
+        WebElement route = new WebDriverWait(driver, 5)
+                .until(ExpectedConditions.visibilityOf(realRoute));
+        return route.getText();
     }
     public String getErrorWrongAirport() {
         return errorWrongAirport.getText();

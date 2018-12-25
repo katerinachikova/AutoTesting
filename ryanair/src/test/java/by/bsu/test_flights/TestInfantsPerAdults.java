@@ -17,7 +17,6 @@ public class TestInfantsPerAdults {
     public void infantsPerAdultsTest() {
         pageFlights.clickCookieClose();
         pageFlights.setInputDestination("Budapest");
-        pageFlights.scrollPage();
         pageFlights.clickArrow();
         pageFlights.clickPlusInfants();
         Assert.assertEquals(pageFlights.getTextFromFlyingWithAnInfant(), "Flying with an infant?");
