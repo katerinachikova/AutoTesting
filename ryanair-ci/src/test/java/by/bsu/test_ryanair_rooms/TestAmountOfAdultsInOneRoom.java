@@ -18,7 +18,6 @@ public class TestAmountOfAdultsInOneRoom {
     @Test
     public void amountOfAdultsInOneRoomTest() {
         pageRyanairRooms.clickRyanairRooms();
-        pageRyanairRooms.clickCookieClose();
         pageRyanairRooms.clickArrowGuests();
         pageRyanairRooms.clickPlusAdults(6);
         Assert.assertTrue(pageRyanairRooms.buttonPlusAdultsIsDisabled());
