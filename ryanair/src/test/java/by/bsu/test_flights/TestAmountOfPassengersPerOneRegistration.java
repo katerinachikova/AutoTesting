@@ -18,9 +18,9 @@ public class TestAmountOfPassengersPerOneRegistration {
     public void amountOfPassengersPerOneRegistrationTest() {
         pageFlights.clickCookieClose();
         pageFlights.setInputDestination("Budapest");
-        pageFlights.clickArrow();
-        pageFlights.clickPlusAdults(25);
-        Assert.assertEquals(pageFlights.getError(),"The maximum number of passengers is 25. If there are more than 25 passengers please use our group booking form.");
+        pageFlights.setDateFlyBack(0);
+        pageFlights.setDateFlyOut(2);
+        Assert.assertTrue(pageFlights.DateFlyBackIsEmpty());
     }
     @AfterClass
     public static void closeDriver() {

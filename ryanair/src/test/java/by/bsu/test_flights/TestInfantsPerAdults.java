@@ -17,9 +17,8 @@ public class TestInfantsPerAdults {
     public void infantsPerAdultsTest() {
         pageFlights.clickCookieClose();
         pageFlights.setInputDestination("Budapest");
-        pageFlights.clickArrow();
-        pageFlights.clickPlusInfants();
-        Assert.assertEquals(pageFlights.getTextFromFlyingWithAnInfant(), "Flying with an infant?");
+        pageFlights.clickRadioButtonOneWay();
+        Assert.assertTrue(pageFlights.fieldFlyBackDoesNotExist());
     }
     @AfterClass
     public static void closeDriver() {

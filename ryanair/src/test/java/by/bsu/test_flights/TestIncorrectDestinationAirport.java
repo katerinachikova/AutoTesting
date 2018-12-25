@@ -17,8 +17,9 @@ public class TestIncorrectDestinationAirport {
     @Test
     public void incorrectDestinationAirportTest() {
         pageFlights.clickCookieClose();
-        pageFlights.setInputDestination("Belarus");
-        pageFlights.clickButtonContinue();
+        pageFlights.setInputDestination("Budapest");
+        pageFlights.clickRadioButtonOneWay();
+        Assert.assertTrue(pageFlights.fieldFlyBackDoesNotExist());
     }
     @AfterClass
     public static void closeDriver() {
